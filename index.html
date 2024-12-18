@@ -2,6 +2,43 @@
 <html lang="en">
 
 <head>
+  <script type="text/javascript">
+    window.helpcrunchSettings = {
+      organization: 'jjlivechat',
+      appId: 'b34dc7cc-fd00-449b-ac0d-9fff4f4f2262',
+    };
+  </script>
+  
+  <script type="text/javascript">
+    (function(w,d){
+      var hS = w.helpcrunchSettings;
+      if (!hS || !hS.organization) { return; }
+      
+      var widgetSrc = 'https://embed.helpcrunch.com/sdk.js';
+      w.HelpCrunch = function(){ w.HelpCrunch.q.push(arguments); };
+      w.HelpCrunch.q = [];
+  
+      function r() {
+        if (d.querySelector('script[src="' + widgetSrc + '"')) {
+          return;
+        }
+        var s = d.createElement('script');
+        s.async = 1;
+        s.type = 'text/javascript';
+        s.src = widgetSrc;
+        (d.body || d.head).appendChild(s);
+      }
+  
+      if (d.readyState === 'complete' || hS.loadImmediately) {
+        r();
+      } else if (w.attachEvent) {
+        w.attachEvent('onload', r);
+      } else {
+        w.addEventListener('load', r, false);
+      }
+    })(window, document);
+  </script>
+  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -682,7 +719,6 @@
                             <div class="form-group">
                               <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                               <input type="hidden" name="access_key" value="853f442c-5f13-4ae4-88ed-d313134be0df">
-
                             </div>
                           </div>
                           <div class="col-md-12 mb-3">
